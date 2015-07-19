@@ -145,4 +145,71 @@ a {
   width: 160px;
   float: left; }
 
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  padding: 20px;
+  text-align: left; }
+
+.tabs {
+  width: 650px;
+  float: none;
+  list-style: none;
+  position: relative;
+  margin: 80px 0 0 10px;
+  text-align: left; }
+
+.tabs li {
+  float: left;
+  display: block; }
+
+.tabs input[type="radio"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
+
+.tabs label {
+  display: block;
+  padding: 14px 21px;
+  border-radius: 2px 2px 0 0;
+  font-size: 20px;
+  color: lightgray;
+  font-weight: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
+.tabs label:hover {
+  color: gray;
+  border-bottom: 5px solid #f75c72; }
+
+.tabs .tab-content {
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  font-size: 17px;
+  line-height: 25px;
+  padding: 25px;
+  position: absolute;
+  top: 53px;
+  left: 0; }
+
+.tabs [id^="tab"]:checked + label {
+  color: black;
+  border-bottom: 5px solid #f75c72; }
+
+.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+  display: block; }
+
 /*# sourceMappingURL=style.css.map */
