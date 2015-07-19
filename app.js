@@ -113,7 +113,11 @@ app.post('/sparkpost_send', function(req, res) {
 				user_type: "students"
 			},
 			substitution_data: {
-				sender: "Big Store Team"
+				thumbnail_subject: "This the Subject",
+				thumbnail_title: "This is the Tilte",
+				thumbnail_text: "This is text",
+				thumbnail_image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png",
+				thumbnail_from:"sender@gmail.com"
 			},
 			recipients: [
 				{
@@ -141,12 +145,11 @@ app.post('/sparkpost_send', function(req, res) {
 					email: "squaremail@mail.pxlbin.com"
 				},
 				subject: req.body.subject,
-				reply_to: "Christmas Sales <squaremail@mail.pxlbin.com>",
+				reply_to: "Square Mail <squaremail@mail.pxlbin.com>",
 				headers: {
 					"X-Customer-Campaign-ID": "squaremail_campaign"
 				},
-				text: "Hi {{address.name}} \nThis is a mail from location {{place}}!",
-				html: "<p>Hi {{address.name}} \nThis is a mail from location {{place}}!! \n</p>"
+				template_id: 'my-template'
 			}
 		}
 	};
