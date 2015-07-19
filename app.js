@@ -107,17 +107,22 @@ app.post('/sparkpost_send', function(req, res) {
 				open_tracking: true,
 				click_tracking: true
 			},
-			campaign_id: "squaremail_campaign",
-			return_path: "squaremail@mail.pxlbin.com",
+			campaign_id: "mailsquare_campaign",
+			return_path: "mailsquare@mail.pxlbin.com",
 			metadata: {
 				user_type: "students"
 			},
 			substitution_data: {
-				thumbnail_subject: "This the Subject",
-				thumbnail_title: "This is the Tilte",
-				thumbnail_text: "This is text",
-				thumbnail_image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png",
-				thumbnail_from:"sender@gmail.com"
+				thumbnail_subject: req.body.subject,
+				thumbnail_title: req.body.title,
+				thumbnail_text: req.body.text,
+				thumbnail_image1: req.body.image1,
+                thumbnail_image2: req.body.image2,
+                thumbnail_image3: req.body.image3,
+                thumbnail_link1: req.body.link1,
+                thumbnail_link2: req.body.link2,
+                thumbnail_link3: req.body.link3,
+				thumbnail_from:"mailsquare@mail.pxlbin.com"
 			},
 			recipients: [
 				{
