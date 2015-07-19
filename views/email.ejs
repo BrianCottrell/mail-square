@@ -33,8 +33,24 @@
         <p><%= emailData.sender %></p>
         <p><%= emailData.date %></p>
         <div class="emailnav">
-          <a href=<%= '/email/:sender='+email.sender+'/:index='+(parseInt(index)-1) %>>previous</a>
-          ||
+          <a class='entypo-export' href='#' title='move'>
+            <span class='hide'>Move</span>
+          </a>
+          |
+           <a class='entypo-trash' href='#' title='delete'>
+            <span class='hide'>Delete</span>
+          </a>
+          |
+           <a class='entypo-forward' href='#' title='forward'>
+            <span class='hide'>Forward</span>
+          </a>
+          |
+           <a class='entypo-comment' href='#' title='reply'>
+            <span class='hide'>Reply</span>
+          </a>
+          |
+           <a href=<%= '/email/:sender='+email.sender+'/:index='+(parseInt(index)-1) %>>prev</a>
+          |
            <a href=<%= '/email/:sender='+email.sender+'/:index='+(parseInt(index)+1) %>>next</a>
         </div>
       </div>
