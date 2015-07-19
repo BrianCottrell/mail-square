@@ -1,0 +1,50 @@
+
+var reqOpts = {
+    transmissionBody: {
+        options: {
+            open_tracking: true,
+            click_tracking: true
+        },
+        campaign_id: "squaremail_campaign",
+        return_path: "squaremail@mail.pxlbin.com",
+        metadata: {
+            user_type: "students"
+        },
+        substitution_data: {
+            sender: "Big Store Team"
+        },
+        recipients: [
+            {
+                return_path: "squaremail@mail.pxlbin.com",
+                address: {
+                    email: "tanmaypa@usc.edu",
+                    name: "Square Mail"
+                },
+                tags: [
+                    "greeting",
+                    "welcome",
+                    "hello"
+                ],
+                metadata: {
+                    place: "Silicon Valley"
+                },
+                substitution_data: {
+                    customer_type: "Platinum"
+                }
+            }
+        ],
+        content: {
+            from: {
+                name: "Square Mail",
+                email: "squaremail@mail.pxlbin.com"
+            },
+            subject: "Welcome from Sqaure Mail",
+            reply_to: "Christmas Sales <squaremail@mail.pxlbin.com>",
+            headers: {
+                "X-Customer-Campaign-ID": "squaremail_campaign"
+            },
+            text: "Hi {{address.name}} \nThis is a mail from location {{place}}!",
+            html: "<p>Hi {{address.name}} \nThis is a mail from location {{place}}!! \n</p>"
+        }
+    }
+};
