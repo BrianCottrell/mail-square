@@ -1,0 +1,16 @@
+{
+  "name": "square-mail",
+  "version": "1.0.0",
+  "description": "an html focused email service",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Cottrell",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1",
+    "ejs": "^1.0.0"
+  }
+}
