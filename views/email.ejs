@@ -28,15 +28,21 @@
     </div>
     <% var emailData = JSON.parse(email.content) %>
     <div class="content">
-      <div class="emailBorder">
+      <div class="emailhead">
         <h1><%= emailData.subject %></h1>
-            <%= emailData.sender %>
-            <%= emailData.date %>
+        <p><%= emailData.sender %></p>
+        <p><%= emailData.date %></p>
+        <div class="emailnav">
+          <a href=<%= '/email/:sender='+email.sender+'/:index='+(parseInt(index)-1) %>>previous</a>
+          ||
+           <a href=<%= '/email/:sender='+email.sender+'/:index='+(parseInt(index)+1) %>>next</a>
+        </div>
+      </div>
+      <div class="emailbody">
             <%= emailData.content %>
             <%= index %>
-        <a href=<%= '/email/:sender='+email.sender+'/:index='+(parseInt(index)+1) %>>next</a>
-        <a href=<%= '/email/:sender='+email.sender+'/:index='+(parseInt(index)-1) %>>Previous</a>
       </div>
+
     </div>
     <script src='main.js' type='text/javascript'></script>
   </body>

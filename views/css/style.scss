@@ -297,9 +297,22 @@ a {
   font-size: 12px;
   background-color: $highlight;
 }
-.emailBorder{
+.emailhead{
   padding: 20px;
-  height: 100px;
+  height: 150px;
   background-color: $gray;
   box-shadow: 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.emailbody {
+  padding: 10px;
+}
+.emailnav {
+  color: white;
+  padding: 0 20px;
+  top: 102px;  
+  right: 10px;
+  position: absolute;
+  float: right;
+  text-align: right;
+  background-color: $highlight;
 }
