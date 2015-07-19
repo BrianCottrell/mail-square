@@ -275,7 +275,7 @@ a {
 }
 .tile-detail{
   margin: 0 0 10px 0;
-  margin-left: -2px;
+  margin-left: 0;
   padding: 14px 10px;
   height: $thumb-height - 50px;
   width: $thumb-width;
@@ -294,8 +294,14 @@ a {
 }
 
 #newEmail {
-  @extend .smalldiv;
+  height: $thumb-height;
+  width: $thumb-width;
+  background: $gray;
+  transform: translate(4px, 4px);
+  box-shadow: 1px 0px darken($gray, 5%), 0px 1px lighten($gray, 10%),
+              2px 1px darken($gray, 5%), 1px 2px lighten($gray, 10%);
   font-size: 12px;
+  padding: 10px 20px;
   background-color: $highlight;
 }
 .emailhead{

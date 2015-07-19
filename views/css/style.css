@@ -139,7 +139,7 @@ a {
   transform: translate(2px, 2px);
   box-shadow: 1px 0px #cfcfcf, 0px 1px #f6f6f6, 2px 1px #cfcfcf, 1px 2px #f6f6f6, 3px 2px #cfcfcf, 2px 3px #f6f6f6, 4px 3px #cfcfcf, 3px 4px #f6f6f6, 5px 4px #cfcfcf, 4px 5px #f6f6f6, 6px 5px #cfcfcf, 5px 6px #f6f6f6, 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2); }
 
-.smalldiv, #newEmail {
+.smalldiv {
   overflow: hidden;
   height: 200px;
   width: 200px;
@@ -221,7 +221,7 @@ a {
 
 .tile-detail {
   margin: 0 0 10px 0;
-  margin-left: -2px;
+  margin-left: 0;
   padding: 14px 10px;
   height: 150px;
   width: 200px;
@@ -233,7 +233,13 @@ a {
   box-shadow: 1px 0px #1d1b41, 0px 1px #3d3a89, 2px 1px #1d1b41, 1px 2px #3d3a89, 3px 2px #1d1b41, 2px 3px #3d3a89, 4px 3px #1d1b41, 3px 4px #3d3a89, 5px 4px #1d1b41, 4px 5px #3d3a89, 6px 5px #1d1b41, 5px 6px #3d3a89, 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2); }
 
 #newEmail {
+  height: 200px;
+  width: 200px;
+  background: #dcdcdc;
+  transform: translate(4px, 4px);
+  box-shadow: 1px 0px #cfcfcf, 0px 1px #f6f6f6, 2px 1px #cfcfcf, 1px 2px #f6f6f6;
   font-size: 12px;
+  padding: 10px 20px;
   background-color: #f75c72; }
 
 .emailhead {
