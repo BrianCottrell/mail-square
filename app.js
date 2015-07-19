@@ -66,7 +66,6 @@ app.get('/email/:sender/:index', function(req, res){
     cpsConn.sendRequest(search_req, function (err, search_resp) {
         if (err) return console.log(err);
         console.log(search_resp.results.document);
-
         res.render('email.ejs', {'email': search_resp.results.document[0], 'index': emailIndex});
     });
 });
@@ -84,11 +83,11 @@ app.post('/email_processor', jsonParser, function(req, res) {
         'date'      : req.body.Date,
         'from'      : req.body.From,
         'subject'   : req.body.Subject,
-        'content'   : req.body['Text-part']
+        'content'   : req.body['Html-part']
     }),
         req.body.Sender
     );
-    console.log(req.body['Text-part']);
+    console.log(req.body['Html-part']);
 });
 
 //SparkPost

@@ -116,10 +116,10 @@ a {
     margin: -10px 8px; }
 
 .bigdiv {
+  overflow: hidden;
   border: 0;
   background: #dcdcdc;
   color: white;
-  padding: 8px 14px;
   height: 200px;
   width: 200px;
   font-weight: bold;
@@ -132,7 +132,7 @@ a {
   box-shadow: 1px 0px #cfcfcf, 0px 1px #f6f6f6, 2px 1px #cfcfcf, 1px 2px #f6f6f6, 3px 2px #cfcfcf, 2px 3px #f6f6f6, 4px 3px #cfcfcf, 3px 4px #f6f6f6, 5px 4px #cfcfcf, 4px 5px #f6f6f6, 6px 5px #cfcfcf, 5px 6px #f6f6f6, 7px 6px #cfcfcf, 6px 7px #f6f6f6, 8px 7px #cfcfcf, 7px 8px #f6f6f6, 9px 8px #cfcfcf, 8px 9px #f6f6f6, 8px 9px 17px 0 rgba(0, 0, 0, 0.2), 7px 10px 17px 0 rgba(0, 0, 0, 0.2); }
 
 .meddiv {
-  padding: 8px 14px;
+  overflow: hidden;
   height: 200px;
   width: 200px;
   background: #dcdcdc;
@@ -140,7 +140,7 @@ a {
   box-shadow: 1px 0px #cfcfcf, 0px 1px #f6f6f6, 2px 1px #cfcfcf, 1px 2px #f6f6f6, 3px 2px #cfcfcf, 2px 3px #f6f6f6, 4px 3px #cfcfcf, 3px 4px #f6f6f6, 5px 4px #cfcfcf, 4px 5px #f6f6f6, 6px 5px #cfcfcf, 5px 6px #f6f6f6, 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2); }
 
 .smalldiv, #newEmail {
-  padding: 8px 14px;
+  overflow: hidden;
   height: 200px;
   width: 200px;
   background: #dcdcdc;

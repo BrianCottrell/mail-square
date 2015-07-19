@@ -3,6 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <title>MailSquare</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel='stylesheet' href='../../../css/style.css'>
     <style>
     @import url(http://weloveiconfonts.com/api/?family=entypo);
@@ -294,7 +295,11 @@
         <p><%= emailData.sender %></p>
         <p><%= emailData.date %></p>
         <div class="emailnav">
-          <a class='entypo-export' href='#' title='move'>
+          <a class='entypo-export' href='http://viewanddata.herokuapp.com/angelh' title='move'>
+            <span class='hide'>3D!!!!!</span>
+          </a>
+          |
+           <a class='entypo-export' href='#' title='move'>
             <span class='hide'>Move</span>
           </a>
           |
@@ -316,7 +321,7 @@
         </div>
       </div>
       <div class="emailbody">
-            <%= emailData.content %>
+            <%- emailData.content %>
             <%= index %>
       </div>
 

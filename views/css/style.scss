@@ -141,10 +141,10 @@ a {
 //round menu end
 //3D TILES
 .bigdiv {
+  overflow: hidden;
   border: 0;
   background: $gray;
   color: white;
-  padding: 8px 14px;
   height: $thumb-height;
   width: $thumb-width;
   font-weight: bold;
@@ -167,7 +167,7 @@ a {
               // 12px 11px darken($gray, 5%), 11px 12px lighten($gray, 10%);
 }
 .meddiv {
-  padding: 8px 14px;
+  overflow: hidden;
   height: $thumb-height;
   width: $thumb-width;
   background: $gray;
@@ -181,7 +181,7 @@ a {
               5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .smalldiv {
-  padding: 8px 14px;
+  overflow: hidden;
   height: $thumb-height;
   width: $thumb-width;
   background: $gray;
