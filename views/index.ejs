@@ -7,8 +7,9 @@
   <body>
     <p>Mail Square</p>
     <p>
-    <% var emailList = emails %>
-    <%= emails[0].content %>
+    <% for(var i = 0; i < emails.length; i++){ %>
+      <div class="email"><%= emails[i].content %></div>
+    <% } %>
     </p>
     <script src="main.js" type="text/javascript"></script>
   </body>

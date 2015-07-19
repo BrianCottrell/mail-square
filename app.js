@@ -71,9 +71,9 @@ app.post('/email_processor', jsonParser, function(req, res) {
         'date'      : req.body.Date,
         'from'      : req.body.From,
         'subject'   : req.body.Subject,
-        'content'   : req.body.Parts['Text-part']
+        'content'   : req.body['Text-part']
     }));
-    console.log(req.body.Sender);
+    console.log(req.body['Text-part']);
 });
 
 //SparkPost
