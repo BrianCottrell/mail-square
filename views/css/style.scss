@@ -7,6 +7,7 @@
 body {
   background: #e9eaef;
   font-family: Open Sans;
+  height: 100%;
 }
 li {
   list-style-type: none;
@@ -47,7 +48,7 @@ a {
 }
 .content {
     margin-left: 60px;
-    height: 500px;
+    height: 1000px;
     width: auto;
     position: relative;
     overflow: auto;
@@ -200,48 +201,48 @@ a {
   position: relative;
   margin: 20px 0 0 10px;
   text-align: left;
-}
-.tabs li {
-  float: left;
-  display: block;
-}
-.tabs input[type="radio"] {
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-}
-.tabs label {
-  display: block;
-  padding: 14px 21px;
-  border-radius: 2px 2px 0 0;
-  font-size: 20px;
-  color: lightgray;
-  font-weight: normal;
-  text-transform: uppercase;
-  cursor: pointer;
-  position: relative;
-  top: 4px;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-.tabs label:hover {
-  color: gray;
-  border-bottom: 5px solid #f75c72;
-}
-.tabs .tab-content {
-  z-index: 2;
-  display: none;
-  overflow: hidden;
-  width: 100%;
-  font-size: 17px;
-  line-height: 25px;
-  padding: 25px;
-  position: absolute;
-  top: 53px;
-  left: 0;
-  white-space: normal;
+  li {
+    float: left;
+    display: block;
+  }
+  input[type="radio"] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  label {
+    display: block;
+    padding: 14px 21px;
+    border-radius: 2px 2px 0 0;
+    font-size: 20px;
+    color: lightgray;
+    font-weight: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    top: 4px;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: gray;
+      border-bottom: 5px solid #f75c72;
+    }
+  }
+  .tab-content {
+    z-index: 2;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    font-size: 17px;
+    line-height: 25px;
+    padding: 25px;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    white-space: normal;
+  }
 }
 .tabs [id^="tab"]:checked + label {
   color: black;
@@ -260,4 +261,9 @@ a {
   margin: 10px;
   overflow: hidden;
   word-wrap: break-word;
+  .tile-detail{
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+  }
 }

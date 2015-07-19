@@ -36,11 +36,13 @@
             <div id="tab-content1" class="tab-content">
               <p>
               <% for(var i = 0; i < emails.length; i++){ %>
-                <div class="email">
-                  <% var email = JSON.parse(emails[i].content) %>
-                  <%= email.sender %>
-                  <%= email.date %>
-                  <%= email.content %>
+                <div class="email meddiv">
+                  <div class="tile-detail">
+                    <% var email = JSON.parse(emails[i].content) %>
+                    <%= email.sender %>
+                    <%= email.date %>
+                    <%= email.content %>
+                  </div>
                 </div>
               <% } %>
               </p>
