@@ -1,11 +1,18 @@
 @import url(http://weloveiconfonts.com/api/?family=entypo);
+
+$lights: #e9eaef;
+$darks: #252353;
+$highlight: #f75c72;
+$gray: #dcdcdc;
+$thumb-width: 200px;
+$thumb-height: 150px;
 /* entypo */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
 
 body {
-  background: #e9eaef;
+  background: $lights;
   font-family: Open Sans;
   height: 100%;
 }
@@ -30,7 +37,7 @@ a {
   position: fixed;
   width: 50px;
   height: 300px;
-  background: #252353;
+  background: $darks;
   ul{
     padding: 15px;
     &:after {
@@ -41,7 +48,7 @@ a {
       content: '';
       width: 0;
       height: 0;
-      border-top: solid 50px #252353;
+      border-top: solid 50px $darks;
       border-right: solid 50px transparent;
     }
   }
@@ -55,17 +62,13 @@ a {
     z-index: 1;
 }
 //Round menus
-#rad1 {
-  left: 20%;
-}
-#rad2 {
-  left: 50%;
-}
 .radial {
+  right: 45px;
   z-index: 9999;
   position: absolute;
-  width: 50%;
-  top: 50.25%;
+  width: 20px;
+  height: 20px;
+  top: -15%;
   margin-left: -25%;
 }
 
@@ -81,14 +84,14 @@ a {
     width: 48px;
     height: 48px;
     line-height: 48px;
-    background: #2980b9;
+    background: $highlight;
     border-radius: 100em;
     color: #fff;
     position: absolute;
     text-decoration: none;
-    left: 50%;
-    margin-left: -24px;
-    top: 24px;
+    left: 60%;
+    margin-left: -22px;
+    top: -7px;
     transition: all .5s ease-in-out;
     opacity: 0;
     &:hover {
@@ -97,86 +100,87 @@ a {
     .radial:hover & {
       opacity: 1;
       &:nth-child(1){
-        transform: translate( 0, -200% );
+        transform: translate( 0, -100% );
       }
       &:nth-child(2) {
-        transform: translate( -200%, 0% );
+        transform: translate( -100%, 0% );
       }
       &:nth-child(3) {
-        transform: translate( 200%, 0 );
+        transform: translate( 100%, 0 );
       }
       &:nth-child(4) {
-        transform: translate( 0, 200% );
+        transform: translate( 0, 100% );
       }
     }
   }
 }
 //menu button
 .avatar {
-  width: 96px;
-  height: 96px;
+  width: 30px;
+  height: 30px;
   overflow: hidden;
-  border-radius: 100em;
-  box-shadow: 0 0 0 5px #2980b9;
+  border-radius: 20px;
   margin: 0 auto;
+  background-color: $highlight;
   position: relative;
   z-index: 10;
-  img {
+  a {
+    position: absolute;
     max-height: 100%;
-    margin: 0 auto;
-    margin-left: -20px;
+    padding: 0;
+    margin: -10px 8px;
   }
 }
 //round menu end
 //3D TILES
 .bigdiv {
   border: 0;
-  background: #5786c1;
+  background: $gray;
   color: white;
-  height: 100px;
-  width: 100px;
   padding: 8px 14px;
+  height: $thumb-height;
+  width: $thumb-width;
   font-weight: bold;
   font-size: 18px;
   text-decoration: none;
   display: inline-block; /* needed for anchors */
   position: relative;
   transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
-              2px 1px #3a587f, 1px 2px #4171ae,
-              3px 2px #3a587f, 2px 3px #4171ae,
-              4px 3px #3a587f, 3px 4px #4171ae,
-              5px 4px #3a587f, 4px 5px #4171ae,
-              6px 5px #3a587f, 5px 6px #4171ae,
-              7px 6px #3a587f, 6px 7px #4171ae,
-              8px 7px #3a587f, 7px 8px #4171ae,
-              9px 8px #3a587f, 8px 9px #4171ae,
+  box-shadow: 1px 0px darken($gray, 5%), 0px 1px lighten($gray, 10%),
+              2px 1px darken($gray, 5%), 1px 2px lighten($gray, 10%),
+              3px 2px darken($gray, 5%), 2px 3px lighten($gray, 10%),
+              4px 3px darken($gray, 5%), 3px 4px lighten($gray, 10%),
+              5px 4px darken($gray, 5%), 4px 5px lighten($gray, 10%),
+              6px 5px darken($gray, 5%), 5px 6px lighten($gray, 10%),
+              7px 6px darken($gray, 5%), 6px 7px lighten($gray, 10%),
+              8px 7px darken($gray, 5%), 7px 8px lighten($gray, 10%),
+              9px 8px darken($gray, 5%), 8px 9px lighten($gray, 10%),
               8px 9px 17px 0 rgba(0, 0, 0, 0.2), 7px 10px 17px 0 rgba(0, 0, 0, 0.2);
-              // 11px 10px #3a587f, 10px 11px #4171ae,
-              // 12px 11px #3a587f, 11px 12px #4171ae;
+              // 11px 10px darken($gray, 5%), 10px 11px lighten($gray, 10%),
+              // 12px 11px darken($gray, 5%), 11px 12px lighten($gray, 10%);
 }
 .meddiv {
   padding: 8px 14px;
-  background: #5786c1;
-  height: 100px;
-  width: 100px;
+  height: $thumb-height;
+  width: $thumb-width;
+  background: $gray;
   transform: translate(2px, 2px);
-  box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
-              2px 1px #3a587f, 1px 2px #4171ae,
-              3px 2px #3a587f, 2px 3px #4171ae,
-              4px 3px #3a587f, 3px 4px #4171ae,
-              5px 4px #3a587f, 4px 5px #4171ae,
-              6px 5px #3a587f, 5px 6px #4171ae,
+  box-shadow: 1px 0px darken($gray, 5%), 0px 1px lighten($gray, 10%),
+              2px 1px darken($gray, 5%), 1px 2px lighten($gray, 10%),
+              3px 2px darken($gray, 5%), 2px 3px lighten($gray, 10%),
+              4px 3px darken($gray, 5%), 3px 4px lighten($gray, 10%),
+              5px 4px darken($gray, 5%), 4px 5px lighten($gray, 10%),
+              6px 5px darken($gray, 5%), 5px 6px lighten($gray, 10%),
               5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .smalldiv {
   padding: 8px 14px;
-  background: #5786c1;
-  height: 100px;
-  width: 100px;
+  height: $thumb-height;
+  width: $thumb-width;
+  background: $gray;
   transform: translate(4px, 4px);
-  box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
-              2px 1px #3a587f, 1px 2px #4171ae;
+  box-shadow: 1px 0px darken($gray, 5%), 0px 1px lighten($gray, 10%),
+              2px 1px darken($gray, 5%), 1px 2px lighten($gray, 10%);
 }
 
 .col {
@@ -227,7 +231,7 @@ a {
     transition: all 0.2s ease-in-out;
     &:hover {
       color: gray;
-      border-bottom: 5px solid #f75c72;
+      border-bottom: 5px solid $highlight;
     }
   }
   .tab-content {
@@ -246,7 +250,7 @@ a {
 }
 .tabs [id^="tab"]:checked + label {
   color: black;
-  border-bottom: 5px solid #f75c72;
+  border-bottom: 5px solid $highlight;
 }
 .tabs [id^="tab"]:checked ~ [id^="tab-content"] {
   display: block;
@@ -256,14 +260,27 @@ a {
 .email {
   display: inline-block;
   vertical-align: top;
-  height: 300px;
-  width: 200px;
+  height: $thumb-height+125px;
+  width: $thumb-width+25px;
   margin: 10px;
   overflow: hidden;
   word-wrap: break-word;
-  .tile-detail{
-    height: 100px;
-    position: absolute;
-    bottom: 0;
-  }
+}
+.tile-detail{
+  margin: 0 0 10px 0;
+  padding: 8px 14px;
+  height: $thumb-height - 50px;
+  width: $thumb-width;
+  transform: translate(2px, 2px);
+  font-size: 13px;
+  color: white;
+  background: $darks;
+  bottom: 0;
+  box-shadow: 1px 0px darken( $darks, 5% ), 0px 1px lighten( $darks, 15% ),
+              2px 1px darken( $darks, 5% ), 1px 2px lighten( $darks, 15% ),
+              3px 2px darken( $darks, 5% ), 2px 3px lighten( $darks, 15% ),
+              4px 3px darken( $darks, 5% ), 3px 4px lighten( $darks, 15% ),
+              5px 4px darken( $darks, 5% ), 4px 5px lighten( $darks, 15% ),
+              6px 5px darken( $darks, 5% ), 5px 6px lighten( $darks, 15% ),
+              5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2);
 }
