@@ -58,6 +58,10 @@ app.get('/',function(req,res){
     });
 });
 
+app.get('/compose',function(req,res){
+    res.render('compose.ejs');
+});
+
 //Mailjet
 //email account processing route
 app.post('/email_processor', jsonParser, function(req, res) {
