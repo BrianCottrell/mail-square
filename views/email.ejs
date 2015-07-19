@@ -1,18 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>MailSquare</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet' href='css/style.css'>
   </head>
   <body>
-    <p>Email Page</p>
-    <% var emailData = JSON.parse(email.content) %>
-    <%= emailData.sender %>
-    <%= emailData.date %>
-    <%= emailData.content %>
-    <%= index %>
-    <a href=<%= '/email/:sender='+email.sender+'/:index='+(parseInt(index)+1) %>>next</a>
-    <a href=<%= '/email/:sender='+email.sender+'/:index='+(parseInt(index)-1) %>>Previous</a>
+    <div class='sidebar'>
+      <div class='logo'></div>
+      <ul>
+        <li>
+          <a class='entypo-vcard' href='#' title=''></a>
+        </li>
+        <li>
+          <a class='entypo-users' href='#' title=''></a>
+        </li>
+        <li>
+          <a class='entypo-inbox' href='#' title=''></a>
+        </li>
+        <li>
+          <a class='entypo-archive' href='#' title=''></a>
+        </li>
+        <li>
+          <a class='entypo-trash' href='#' title=''></a>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <p>Email Page</p>
+          <% var emailData = JSON.parse(email.content) %>
+          <%= emailData.sender %>
+          <%= emailData.date %>
+          <%= emailData.content %>
+          <%= index %>
+      <a href=<%= '/email/:sender='+email.sender+'/:index='+(parseInt(index)+1) %>>next</a>
+      <a href=<%= '/email/:sender='+email.sender+'/:index='+(parseInt(index)-1) %>>Previous</a>
+    </div>
+    <script src='main.js' type='text/javascript'></script>
   </body>
 </html>
