@@ -4,6 +4,267 @@
     <meta charset='utf-8'>
     <title>MailSquare</title>
     <link rel='stylesheet' href='../../../css/style.css'>
+    <style>
+    @import url(http://weloveiconfonts.com/api/?family=entypo);
+    /* entypo */
+    [class*="entypo-"]:before {
+      font-family: 'entypo', sans-serif; }
+
+    body {
+      background: #e9eaef;
+      font-family: Open Sans;
+      height: 100%; }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)); }
+
+    li {
+      list-style-type: none; }
+
+    a {
+      font-size: 18px;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      color: #fff;
+      text-decoration: none; }
+
+    .hide {
+      display: none; }
+
+    .sidebar {
+      position: fixed;
+      width: 50px;
+      height: 300px;
+      background: #252353; }
+      .sidebar ul {
+        padding: 15px; }
+        .sidebar ul:after {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -50%;
+          content: '';
+          width: 0;
+          height: 0;
+          border-top: solid 50px #252353;
+          border-right: solid 50px transparent; }
+
+    .content {
+      margin-left: 50px;
+      height: 1000px;
+      width: auto;
+      position: relative;
+      overflow: auto;
+      z-index: 1; }
+
+    .indexwrapper {
+      padding: 20px; }
+
+    .radial {
+      right: 45px;
+      z-index: 9999;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: -10%;
+      margin-left: -25%; }
+
+    .menu {
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+      .menu a {
+        font-size: 18px;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        background: #f75c72;
+        border-radius: 100em;
+        color: #fff;
+        position: absolute;
+        text-decoration: none;
+        left: 60%;
+        margin-left: -22px;
+        top: -7px;
+        transition: all .5s ease-in-out;
+        opacity: 0; }
+        .menu a:hover {
+          background: #2c3e50; }
+        .radial:hover .menu a {
+          opacity: 1; }
+          .radial:hover .menu a:nth-child(1) {
+            transform: translate(0, -100%); }
+          .radial:hover .menu a:nth-child(2) {
+            transform: translate(-100%, 0%); }
+          .radial:hover .menu a:nth-child(3) {
+            transform: translate(100%, 0); }
+          .radial:hover .menu a:nth-child(4) {
+            transform: translate(0, 100%); }
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      border-radius: 20px;
+      margin: 0 auto;
+      background-color: #f75c72;
+      position: relative;
+      z-index: 10; }
+      .avatar a {
+        position: absolute;
+        max-height: 100%;
+        padding: 0;
+        margin: -10px 8px; }
+
+    .bigdiv {
+      border: 0;
+      background: #dcdcdc;
+      color: white;
+      padding: 8px 14px;
+      height: 200px;
+      width: 200px;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+      display: inline-block;
+      /* needed for anchors */
+      position: relative;
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 1px 0px #cfcfcf, 0px 1px #f6f6f6, 2px 1px #cfcfcf, 1px 2px #f6f6f6, 3px 2px #cfcfcf, 2px 3px #f6f6f6, 4px 3px #cfcfcf, 3px 4px #f6f6f6, 5px 4px #cfcfcf, 4px 5px #f6f6f6, 6px 5px #cfcfcf, 5px 6px #f6f6f6, 7px 6px #cfcfcf, 6px 7px #f6f6f6, 8px 7px #cfcfcf, 7px 8px #f6f6f6, 9px 8px #cfcfcf, 8px 9px #f6f6f6, 8px 9px 17px 0 rgba(0, 0, 0, 0.2), 7px 10px 17px 0 rgba(0, 0, 0, 0.2); }
+
+    .meddiv {
+      padding: 8px 14px;
+      height: 200px;
+      width: 200px;
+      background: #dcdcdc;
+      transform: translate(2px, 2px);
+      box-shadow: 1px 0px #cfcfcf, 0px 1px #f6f6f6, 2px 1px #cfcfcf, 1px 2px #f6f6f6, 3px 2px #cfcfcf, 2px 3px #f6f6f6, 4px 3px #cfcfcf, 3px 4px #f6f6f6, 5px 4px #cfcfcf, 4px 5px #f6f6f6, 6px 5px #cfcfcf, 5px 6px #f6f6f6, 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2); }
+
+    .smalldiv, #newEmail {
+      padding: 8px 14px;
+      height: 200px;
+      width: 200px;
+      background: #dcdcdc;
+      transform: translate(4px, 4px);
+      box-shadow: 1px 0px #cfcfcf, 0px 1px #f6f6f6, 2px 1px #cfcfcf, 1px 2px #f6f6f6; }
+
+    .col {
+      width: 160px;
+      float: left; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
+
+    .tabs {
+      width: 100%;
+      float: none;
+      list-style: none;
+      position: relative;
+      margin: 0 0 0 10px;
+      text-align: left; }
+      .tabs li {
+        float: left;
+        display: block; }
+      .tabs input[type="radio"] {
+        position: absolute;
+        top: -9999px;
+        left: -9999px; }
+      .tabs label {
+        display: block;
+        padding: 14px 21px;
+        border-radius: 2px 2px 0 0;
+        font-size: 20px;
+        color: lightgray;
+        font-weight: normal;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        top: 4px;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+        .tabs label:hover {
+          color: gray;
+          border-bottom: 5px solid #f75c72; }
+      .tabs .tab-content {
+        z-index: 2;
+        display: none;
+        overflow: hidden;
+        width: 100%;
+        font-size: 17px;
+        line-height: 25px;
+        padding: 25px;
+        position: absolute;
+        top: 53px;
+        left: 0;
+        white-space: normal; }
+
+    .tabs [id^="tab"]:checked + label {
+      color: black;
+      border-bottom: 5px solid #f75c72; }
+
+    .tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+      display: block; }
+
+    .email {
+      display: inline-block;
+      vertical-align: top;
+      height: 400px;
+      width: 225px;
+      margin: 10px;
+      overflow: hidden;
+      word-wrap: break-word; }
+
+    .tile-detail {
+      margin: 0 0 10px 0;
+      margin-left: -2px;
+      padding: 14px 10px;
+      height: 150px;
+      width: 200px;
+      transform: translate(2px, 2px);
+      font-size: 13px;
+      color: white;
+      background: #252353;
+      bottom: 0;
+      box-shadow: 1px 0px #1d1b41, 0px 1px #3d3a89, 2px 1px #1d1b41, 1px 2px #3d3a89, 3px 2px #1d1b41, 2px 3px #3d3a89, 4px 3px #1d1b41, 3px 4px #3d3a89, 5px 4px #1d1b41, 4px 5px #3d3a89, 6px 5px #1d1b41, 5px 6px #3d3a89, 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2); }
+
+    #newEmail {
+      font-size: 12px;
+      background-color: #f75c72; }
+
+    .emailhead {
+      padding: 20px;
+      height: 150px;
+      background-color: #dcdcdc;
+      box-shadow: 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2); }
+
+    .emailbody {
+      padding: 10px; }
+
+    .emailnav {
+      color: white;
+      padding: 0 20px;
+      top: 102px;
+      right: 10px;
+      position: absolute;
+      float: right;
+      text-align: right;
+      background-color: #f75c72; }
+
+    /*# sourceMappingURL=style.css.map */
+
+    </style>
   </head>
   <body>
     <div class='sidebar'>
