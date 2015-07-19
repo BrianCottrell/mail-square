@@ -79,63 +79,62 @@ app.post('/email_processor', jsonParser, function(req, res) {
 //SparkPost
 "use strict";
 
-var key = "d3597d0a50fab22c34465d1d4aabbc22590f1a8d";
+var key = "734a0c281ffc0844d0822e6e67978672178b216e";
 var SparkPost = require("sparkpost");
 var client = new SparkPost(key);
 
 app.post('/sparkpost_send', function(req, res) {
     console.log(req.body.recipient);
     console.log(req.body.subject);
-    var reqOpts = {
-      transmissionBody: {
-        options: {
-          open_tracking: true,
-          click_tracking: true
-        },
-        campaign_id: "christmas_campaign",
-        return_path: "bounces-christmas-campaign@emailzme.com",
-        metadata: {
-          user_type: "students"
-        },
-        substitution_data: {
-          sender: "Big Store Team"
-        },
-        recipients: [
-          {
-            return_path: "squaremail@emailzme.com",
-            address: {
-              email: "brian.cottrell0@gmail.com",
-              name: "Brian Cottrell"
-            },
-            tags: [
-              "greeting",
-              "prehistoric",
-              "fred",
-              "flintstone"
-            ],
-            metadata: {
-              place: "Bedrock"
-            },
-            substitution_data: {
-              customer_type: "Platinum"
-            }
-          }
-        ],
-        content: {
-          from: {
-            name: "Fred Flintstone",
-            email: "mailsquare@emailzme.com"
-          },
-          subject: req.body.subject,
-          reply_to: "Christmas Sales <sales@flintstone.com>",
-          headers: {
-            "X-Customer-Campaign-ID": "christmas_campaign"
-          },
-          text: req.body.text,
-          html: req.body.text
-        }
-      }
-    };
+	var reqOpts = {
+		transmissionBody: {
+			options: {
+				open_tracking: true,
+				click_tracking: true
+			},
+			campaign_id: "squaremail_campaign",
+			return_path: "squaremail@mail.pxlbin.com",
+			metadata: {
+				user_type: "students"
+			},
+			substitution_data: {
+				sender: "Big Store Team"
+			},
+			recipients: [
+				{
+					return_path: "squaremail@mail.pxlbin.com",
+					address: {
+						email: "tanmaypa@usc.edu",
+						name: "Square Mail"
+					},
+					tags: [
+						"greeting",
+						"welcome",
+						"hello"
+					],
+					metadata: {
+						place: "Silicon Valley"
+					},
+					substitution_data: {
+						customer_type: "Platinum"
+					}
+				}
+			],
+			content: {
+				from: {
+					name: "Square Mail",
+					email: "squaremail@mail.pxlbin.com"
+				},
+				subject: "Welcome from Sqaure Mail",
+				reply_to: "Christmas Sales <squaremail@mail.pxlbin.com>",
+				headers: {
+					"X-Customer-Campaign-ID": "squaremail_campaign"
+				},
+				text: "Hi {{address.name}} \nThis is a mail from location {{place}}!",
+				html: "<p>Hi {{address.name}} \nThis is a mail from location {{place}}!! \n</p>"
+			}
+		}
+	};
 
     client.transmissions.send(reqOpts, function(err, res) {
       if (err) {
