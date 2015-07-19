@@ -1,0 +1,152 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+body {
+  background: #3498db;
+}
+
+.hide {
+  display: none;
+}
+
+#rad1 {
+  left: 20%;
+}
+#rad2 {
+  left: 50%;
+}
+.radial {
+  z-index: 9999;
+  position: absolute;
+  width: 50%;
+  top: 50.25%;
+  margin-left: -25%;
+}
+
+.menu {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  a {
+    font-size: 18px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    background: #2980b9;
+    border-radius: 100em;
+    color: #fff;
+    position: absolute;
+    text-decoration: none;
+    left: 50%;
+    margin-left: -24px;
+    top: 24px;
+    transition: all .5s ease-in-out;
+    opacity: 0;
+    &:hover {
+      background: #2c3e50;
+    }
+    .radial:hover & {
+      opacity: 1;
+      &:nth-child(1){
+        transform: translate( 0, -200% );
+      }
+      &:nth-child(2) {
+        transform: translate( -200%, 0% );
+      }
+      &:nth-child(3) {
+        transform: translate( 200%, 0 );
+      }
+      &:nth-child(4) {
+        transform: translate( 0, 200% );
+      }
+    }
+  }
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  border-radius: 100em;
+  box-shadow: 0 0 0 5px #2980b9;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  img {
+    max-height: 100%;
+    margin: 0 auto;
+    margin-left: -20px;
+  }
+}
+
+// 3d shadow
+// .dwrapper {
+//     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+//     transition-delay: 0s;
+//     padding: 1px -10px 2px 0px;
+//   }
+.bigdiv {
+  border: 0;
+  background: #5786c1;
+  color: white;
+  height: 100px;
+  width: 100px;
+  padding: 8px 14px;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block; /* needed for anchors */
+  position: relative;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
+              2px 1px #3a587f, 1px 2px #4171ae,
+              3px 2px #3a587f, 2px 3px #4171ae,
+              4px 3px #3a587f, 3px 4px #4171ae,
+              5px 4px #3a587f, 4px 5px #4171ae,
+              6px 5px #3a587f, 5px 6px #4171ae,
+              7px 6px #3a587f, 6px 7px #4171ae,
+              8px 7px #3a587f, 7px 8px #4171ae,
+              9px 8px #3a587f, 8px 9px #4171ae,
+              8px 9px 17px 0 rgba(0, 0, 0, 0.2), 7px 10px 17px 0 rgba(0, 0, 0, 0.2);
+              // 11px 10px #3a587f, 10px 11px #4171ae,
+              // 12px 11px #3a587f, 11px 12px #4171ae;
+}
+.meddiv {
+  padding: 8px 14px;
+  background: #5786c1;
+  height: 100px;
+  width: 100px;
+  transform: translate(2px, 2px);
+  box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
+              2px 1px #3a587f, 1px 2px #4171ae,
+              3px 2px #3a587f, 2px 3px #4171ae,
+              4px 3px #3a587f, 3px 4px #4171ae,
+              5px 4px #3a587f, 4px 5px #4171ae,
+              6px 5px #3a587f, 5px 6px #4171ae,
+              5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 17px 0 rgba(0, 0, 0, 0.2);
+}
+.smalldiv {
+  padding: 8px 14px;
+  background: #5786c1;
+  height: 100px;
+  width: 100px;
+  transform: translate(4px, 4px);
+  box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
+              2px 1px #3a587f, 1px 2px #4171ae,
+              1px 2px 17px 0 rgba(0, 0, 0, 0.2), 0px 3px 17px 0 rgba(0, 0, 0, 0.2);
+}
+body {
+  padding: 50px;
+  background: lightblue;
+}
+.col {
+  width: 160px;
+  float: left;
+}
