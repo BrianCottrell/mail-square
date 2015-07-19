@@ -1,18 +1,59 @@
 @import url(http://weloveiconfonts.com/api/?family=entypo);
-
 /* entypo */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
 
 body {
-  background: #3498db;
+  background: #e9eaef;
+  font-family: Open Sans;
+}
+li {
+  list-style-type: none;
+}
+a {
+  font-size: 18px;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  color: #fff;
+  text-decoration: none;
 }
 
 .hide {
   display: none;
 }
 
+//layout
+.sidebar {
+  position: fixed;
+  width: 50px;
+  height: 300px;
+  background: #252353;
+  ul{
+    padding: 15px;
+    &:after {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -50%;
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: solid 50px #252353;
+      border-right: solid 50px transparent;
+    }
+  }
+}
+.content {
+    margin-left: 60px;
+    height: 500px;
+    width: auto;
+    position: relative;
+    overflow: auto;
+    z-index: 1;
+}
+//Round menus
 #rad1 {
   left: 20%;
 }
@@ -69,7 +110,7 @@ body {
     }
   }
 }
-
+//menu button
 .avatar {
   width: 96px;
   height: 96px;
@@ -85,13 +126,8 @@ body {
     margin-left: -20px;
   }
 }
-
-// 3d shadow
-// .dwrapper {
-//     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
-//     transition-delay: 0s;
-//     padding: 1px -10px 2px 0px;
-//   }
+//round menu end
+//3D TILES
 .bigdiv {
   border: 0;
   background: #5786c1;
@@ -130,7 +166,7 @@ body {
               4px 3px #3a587f, 3px 4px #4171ae,
               5px 4px #3a587f, 4px 5px #4171ae,
               6px 5px #3a587f, 5px 6px #4171ae,
-              5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 17px 0 rgba(0, 0, 0, 0.2);
+              5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .smalldiv {
   padding: 8px 14px;
@@ -139,14 +175,11 @@ body {
   width: 100px;
   transform: translate(4px, 4px);
   box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
-              2px 1px #3a587f, 1px 2px #4171ae,
-              1px 2px 17px 0 rgba(0, 0, 0, 0.2), 0px 3px 17px 0 rgba(0, 0, 0, 0.2);
+              2px 1px #3a587f, 1px 2px #4171ae;
 }
-body {
-  padding: 50px;
-  background: lightblue;
-}
+
 .col {
   width: 160px;
   float: left;
 }
+//3d tiles end
