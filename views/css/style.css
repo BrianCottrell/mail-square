@@ -131,7 +131,7 @@ a {
   transform: translate(2px, 2px);
   box-shadow: 1px 0px #cfcfcf, 0px 1px #f6f6f6, 2px 1px #cfcfcf, 1px 2px #f6f6f6, 3px 2px #cfcfcf, 2px 3px #f6f6f6, 4px 3px #cfcfcf, 3px 4px #f6f6f6, 5px 4px #cfcfcf, 4px 5px #f6f6f6, 6px 5px #cfcfcf, 5px 6px #f6f6f6, 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2); }
 
-.smalldiv {
+.smalldiv, #newEmail {
   padding: 8px 14px;
   height: 150px;
   width: 200px;
@@ -155,7 +155,7 @@ a {
   float: none;
   list-style: none;
   position: relative;
-  margin: 20px 0 0 10px;
+  margin: 0 0 0 10px;
   text-align: left; }
   .tabs li {
     float: left;
@@ -213,7 +213,7 @@ a {
 
 .tile-detail {
   margin: 0 0 10px 0;
-  padding: 8px 14px;
+  padding: 14px 10px;
   height: 100px;
   width: 200px;
   transform: translate(2px, 2px);
@@ -222,5 +222,9 @@ a {
   background: #252353;
   bottom: 0;
   box-shadow: 1px 0px #1d1b41, 0px 1px #3d3a89, 2px 1px #1d1b41, 1px 2px #3d3a89, 3px 2px #1d1b41, 2px 3px #3d3a89, 4px 3px #1d1b41, 3px 4px #3d3a89, 5px 4px #1d1b41, 4px 5px #3d3a89, 6px 5px #1d1b41, 5px 6px #3d3a89, 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2); }
+
+#newEmail {
+  font-size: 12px;
+  background-color: #f75c72; }
 
 /*# sourceMappingURL=style.css.map */

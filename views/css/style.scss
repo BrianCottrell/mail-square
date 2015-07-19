@@ -61,6 +61,7 @@ a {
     overflow: auto;
     z-index: 1;
 }
+
 //Round menus
 .radial {
   right: 45px;
@@ -203,7 +204,7 @@ a {
   float: none;
   list-style: none;
   position: relative;
-  margin: 20px 0 0 10px;
+  margin: 0 0 0 10px;
   text-align: left;
   li {
     float: left;
@@ -268,7 +269,7 @@ a {
 }
 .tile-detail{
   margin: 0 0 10px 0;
-  padding: 8px 14px;
+  padding: 14px 10px;
   height: $thumb-height - 50px;
   width: $thumb-width;
   transform: translate(2px, 2px);
@@ -283,4 +284,10 @@ a {
               5px 4px darken( $darks, 5% ), 4px 5px lighten( $darks, 15% ),
               6px 5px darken( $darks, 5% ), 5px 6px lighten( $darks, 15% ),
               5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+#newEmail {
+  @extend .smalldiv;
+  font-size: 12px;
+  background-color: $highlight;
 }

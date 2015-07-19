@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>MailSquare</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet' href='css/style.css'>
   </head>
   <body>
-    <div class="sidebar">
-      <div class="logo"></div>
+    <div class='sidebar'>
+      <div class='logo'></div>
       <ul>
         <li>
           <a class='entypo-vcard' href='#' title=''></a>
@@ -26,27 +26,28 @@
         </li>
       </ul>
     </div>
-    <div class="content">
+    <div class='content'>
       <h1>mailSquare</h1>
+      <a href='/compose' id='newEmail'>New Email</a>
       <div>
-        <ul class="tabs">
+        <ul class='tabs'>
           <li>
-            <input type="radio" name='tabs' id='tab1' checked />
-            <label for="tab1">Primary</label>
-            <div id="tab-content1" class="tab-content">
+            <input type='radio' name='tabs' id='tab1' checked />
+            <label for='tab1'>Primary</label>
+            <div id='tab-content1' class='tab-content'>
               <p>
               <% for(var i = 0; i < emails.length; i++){ %>
                 <% var email = JSON.parse(emails[i].content) %>
                 <a href=<%= '/email/:sender='+email.sender+'/:index=0' %>>
-                <div class="email">
-                  <div class="meddiv">
+                <div class='email'>
+                  <div class='meddiv'>
 
                   </div>
-                  <div class="tile-detail">
+                  <div class='tile-detail'>
                     <div class='radial-container'>
                       <nav class='radial'>
                         <div class='avatar'>
-                          <a class="entypo-menu" href='#' title='menu'></a>
+                          <a class='entypo-menu' href='#' title='menu'></a>
                         </div>
                         <div class='menu'>
                           <a class='entypo-export' href='#' title='move'>
@@ -64,9 +65,10 @@
                         </div>
                       </nav>
                     </div>
+                    <%= email.subject %>
                     <%= email.sender %>
                     <%= email.date %>
-                    <%= email.content %>
+
                   </div>
                 </a>
             </div>
@@ -74,28 +76,28 @@
             </p>
           </li>
           <li>
-            <input type="radio" name='tabs' id='tab2' checked />
-            <label for="tab2">Social</label>
-            <div id="tab-content2" class="tab-content">
+            <input type='radio' name='tabs' id='tab2' checked />
+            <label for='tab2'>Social</label>
+            <div id='tab-content2' class='tab-content'>
 
             </div>
           </li>
           <li>
-            <input type="radio" name='tabs' id='tab3' checked />
-            <label for="tab3">Promotions</label>
-            <div id="tab-content3" class="tab-content">
+            <input type='radio' name='tabs' id='tab3' checked />
+            <label for='tab3'>Promotions</label>
+            <div id='tab-content3' class='tab-content'>
               <p>
               <% for(var i = 0; i < emails.length; i++){ %>
-                <div class="email"><%= emails[i].content %></div>
+                <div class='email'><%= emails[i].content %></div>
               <% } %>
               </p>
 
             </div>
           </li>
           <li>
-            <input type="radio" name='tabs' id='tab4' checked />
-            <label for="tab4">Updates</label>
-            <div id="tab-content4" class="tab-content">
+            <input type='radio' name='tabs' id='tab4' checked />
+            <label for='tab4'>Updates</label>
+            <div id='tab-content4' class='tab-content'>
 
             </div>
 
@@ -103,6 +105,6 @@
         </ul>
       </div>
     </div>
-    <script src="main.js" type="text/javascript"></script>
+    <script src='main.js' type='text/javascript'></script>
   </body>
 </html>
