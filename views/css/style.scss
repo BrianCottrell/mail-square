@@ -5,7 +5,7 @@ $darks: #252353;
 $highlight: #f75c72;
 $gray: #dcdcdc;
 $thumb-width: 200px;
-$thumb-height: 150px;
+$thumb-height: 200px;
 /* entypo */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
@@ -75,7 +75,7 @@ a {
   position: absolute;
   width: 20px;
   height: 20px;
-  top: -15%;
+  top: -10%;
   margin-left: -25%;
 }
 
@@ -267,7 +267,7 @@ a {
 .email {
   display: inline-block;
   vertical-align: top;
-  height: $thumb-height+125px;
+  height: $thumb-height+200px;
   width: $thumb-width+25px;
   margin: 10px;
   overflow: hidden;
@@ -275,6 +275,7 @@ a {
 }
 .tile-detail{
   margin: 0 0 10px 0;
+  margin-left: -2px;
   padding: 14px 10px;
   height: $thumb-height - 50px;
   width: $thumb-width;
@@ -309,7 +310,7 @@ a {
 .emailnav {
   color: white;
   padding: 0 20px;
-  top: 102px;  
+  top: 102px;
   right: 10px;
   position: absolute;
   float: right;
