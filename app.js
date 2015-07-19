@@ -83,7 +83,7 @@ app.post('/email_processor', jsonParser, function(req, res) {
         'date'      : req.body.Date,
         'from'      : req.body.From,
         'subject'   : req.body.Subject,
-        'content'   : req.body['Html-part']
+        'content'   : req.body['Text-part']
     }),
         req.body.Sender
     );
