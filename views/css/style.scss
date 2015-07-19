@@ -253,7 +253,11 @@ a {
 //tabs end
 //email tiles
 .email {
+  display: inline-block;
+  vertical-align: top;
   height: 300px;
   width: 200px;
   margin: 10px;
+  overflow: hidden;
+  word-wrap: break-word;
 }

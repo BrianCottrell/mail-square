@@ -210,8 +210,12 @@ a {
   display: block; }
 
 .email {
+  display: inline-block;
+  vertical-align: top;
   height: 300px;
   width: 200px;
-  margin: 10px; }
+  margin: 10px;
+  overflow: hidden;
+  word-wrap: break-word; }
 
 /*# sourceMappingURL=style.css.map */
