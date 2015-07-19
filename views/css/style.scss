@@ -57,7 +57,7 @@ a {
   }
 }
 .content {
-    margin-left: 60px;
+    margin-left: 50px;
     height: 1000px;
     width: auto;
     position: relative;
@@ -65,6 +65,9 @@ a {
     z-index: 1;
 }
 
+.indexwrapper{
+  padding: 20px;
+}
 //Round menus
 .radial {
   right: 45px;
@@ -293,4 +296,10 @@ a {
   @extend .smalldiv;
   font-size: 12px;
   background-color: $highlight;
+}
+.emailBorder{
+  padding: 20px;
+  height: 100px;
+  background-color: $gray;
+  box-shadow: 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2);
 }

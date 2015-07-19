@@ -46,12 +46,15 @@ a {
       border-right: solid 50px transparent; }
 
 .content {
-  margin-left: 60px;
+  margin-left: 50px;
   height: 1000px;
   width: auto;
   position: relative;
   overflow: auto;
   z-index: 1; }
+
+.indexwrapper {
+  padding: 20px; }
 
 .radial {
   right: 45px;
@@ -231,5 +234,11 @@ a {
 #newEmail {
   font-size: 12px;
   background-color: #f75c72; }
+
+.emailBorder {
+  padding: 20px;
+  height: 100px;
+  background-color: #dcdcdc;
+  box-shadow: 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2); }
 
 /*# sourceMappingURL=style.css.map */
