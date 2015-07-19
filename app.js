@@ -104,7 +104,7 @@ app.post('/sparkpost_send', function(req, res) {
 				{
 					return_path: "squaremail@mail.pxlbin.com",
 					address: {
-						email: "tanmaypa@usc.edu",
+						email: req.body.recipient,
 						name: "Square Mail"
 					},
 					tags: [
@@ -125,7 +125,7 @@ app.post('/sparkpost_send', function(req, res) {
 					name: "Square Mail",
 					email: "squaremail@mail.pxlbin.com"
 				},
-				subject: "Welcome from Sqaure Mail",
+				subject: req.body.subject,
 				reply_to: "Christmas Sales <squaremail@mail.pxlbin.com>",
 				headers: {
 					"X-Customer-Campaign-ID": "squaremail_campaign"
@@ -135,16 +135,20 @@ app.post('/sparkpost_send', function(req, res) {
 			}
 		}
 	};
-
-    client.transmissions.send(reqOpts, function(err, res) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(res.body);
-        console.log("Congrats you can use our SDK!");
-        res.render('index');
-      }
-    });
+  client.transmissions.send(reqOpts, function(err, response) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(response.body);
+      console.log("Congrats you can use our SDK!");
+    }
+  });
+  var search_req = new cps.SearchRequest("*", 0, 100);
+  cpsConn.sendRequest(search_req, function (err, search_resp) {
+      if (err) return console.log(err);
+      console.log(search_resp.results.document);
+      res.render('index.ejs', {'emails': search_resp.results.document});
+  });
 });
 
 //Run server
