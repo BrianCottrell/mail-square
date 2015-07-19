@@ -46,12 +46,15 @@ a {
       border-right: solid 50px transparent; }
 
 .content {
-  margin-left: 60px;
+  margin-left: 50px;
   height: 1000px;
   width: auto;
   position: relative;
   overflow: auto;
   z-index: 1; }
+
+.indexwrapper {
+  padding: 20px; }
 
 .radial {
   right: 45px;
@@ -59,7 +62,7 @@ a {
   position: absolute;
   width: 20px;
   height: 20px;
-  top: -15%;
+  top: -10%;
   margin-left: -25%; }
 
 .menu {
@@ -117,7 +120,7 @@ a {
   background: #dcdcdc;
   color: white;
   padding: 8px 14px;
-  height: 150px;
+  height: 200px;
   width: 200px;
   font-weight: bold;
   font-size: 18px;
@@ -130,7 +133,7 @@ a {
 
 .meddiv {
   padding: 8px 14px;
-  height: 150px;
+  height: 200px;
   width: 200px;
   background: #dcdcdc;
   transform: translate(2px, 2px);
@@ -138,7 +141,7 @@ a {
 
 .smalldiv, #newEmail {
   padding: 8px 14px;
-  height: 150px;
+  height: 200px;
   width: 200px;
   background: #dcdcdc;
   transform: translate(4px, 4px);
@@ -210,7 +213,7 @@ a {
 .email {
   display: inline-block;
   vertical-align: top;
-  height: 275px;
+  height: 400px;
   width: 225px;
   margin: 10px;
   overflow: hidden;
@@ -218,8 +221,9 @@ a {
 
 .tile-detail {
   margin: 0 0 10px 0;
+  margin-left: -2px;
   padding: 14px 10px;
-  height: 100px;
+  height: 150px;
   width: 200px;
   transform: translate(2px, 2px);
   font-size: 13px;
@@ -230,6 +234,25 @@ a {
 
 #newEmail {
   font-size: 12px;
+  background-color: #f75c72; }
+
+.emailhead {
+  padding: 20px;
+  height: 150px;
+  background-color: #dcdcdc;
+  box-shadow: 5px 6px 17px 0 rgba(0, 0, 0, 0.2), 4px 7px 5px 0 rgba(0, 0, 0, 0.2); }
+
+.emailbody {
+  padding: 10px; }
+
+.emailnav {
+  color: white;
+  padding: 0 20px;
+  top: 102px;
+  right: 10px;
+  position: absolute;
+  float: right;
+  text-align: right;
   background-color: #f75c72; }
 
 /*# sourceMappingURL=style.css.map */

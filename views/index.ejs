@@ -16,7 +16,7 @@
           <a class='entypo-users' href='#' title=''></a>
         </li>
         <li>
-          <a class='entypo-inbox' href='#' title=''></a>
+          <a class='entypo-inbox' href='/' title=''></a>
         </li>
         <li>
           <a class='entypo-archive' href='#' title=''></a>
@@ -27,79 +27,109 @@
       </ul>
     </div>
     <div class='content'>
-      <h1>mailSquare</h1>
-      <a href='/compose' id='newEmail'>New Email</a>
-      <div>
-        <ul class='tabs'>
-          <li>
-            <input type='radio' name='tabs' id='tab1' checked />
-            <label for='tab1'>Primary</label>
-            <div id='tab-content1' class='tab-content'>
-              <p>
-              <% for(var i = 0; i < emails.length; i++){ %>
-                <% var email = JSON.parse(emails[i].content) %>
-                <a href=<%= '/email/:sender='+email.sender+'/:index=0' %>>
-                <div class='email'>
-                  <div class='meddiv'>
-
-                  </div>
-                  <div class='tile-detail'>
-                    <div class='radial-container'>
-                      <nav class='radial'>
-                        <div class='avatar'>
-                          <a class='entypo-menu' href='#' title='menu'></a>
+        <div class="indexwrapper">
+          <h1>mailSquare</h1>
+          <a href='/compose' id='newEmail'>New Email</a>
+          <div>
+            <ul class='tabs'>
+              <li>
+                <input type='radio' name='tabs' id='tab1' checked />
+                <label for='tab1'>Primary</label>
+                <div id='tab-content1' class='tab-content'>
+                  <% for(var i = 0; i < emails.length; i++){ %>
+                    <% var email = JSON.parse(emails[i].content) %>
+                    <a href=<%= '/email/:sender='+email.sender+'/:index=0' %>>
+                    <div class='email'>
+                      <div class='meddiv'>
+                        <%- email.content %>
+                      </div>
+                      <div class='tile-detail'>
+                        <div class='radial-container'>
+                          <nav class='radial'>
+                            <div class='avatar'>
+                              <a class='entypo-menu' href='#' title='menu'></a>
+                            </div>
+                            <div class='menu'>
+                              <a class='entypo-export' href='#' title='move'>
+                                <span class='hide'>Move</span>
+                              </a>
+                              <a class='entypo-trash' href='#' title='delete'>
+                                <span class='hide'>Delete</span>
+                              </a>
+                              <a class='entypo-forward' href='#' title='forward'>
+                                <span class='hide'>Forward</span>
+                              </a>
+                              <a class='entypo-comment' href='#' title='reply'>
+                                <span class='hide'>Reply</span>
+                              </a>
+                            </div>
+                          </nav>
                         </div>
-                        <div class='menu'>
-                          <a class='entypo-export' href='#' title='move'>
-                            <span class='hide'>Move</span>
-                          </a>
-                          <a class='entypo-trash' href='#' title='delete'>
-                            <span class='hide'>Delete</span>
-                          </a>
-                          <a class='entypo-forward' href='#' title='forward'>
-                            <span class='hide'>Forward</span>
-                          </a>
-                          <a class='entypo-comment' href='#' title='reply'>
-                            <span class='hide'>Reply</span>
-                          </a>
+                        <b><%= email.subject %></b>
+                        <hr>
+                        <small><%= email.sender %></small>
+                        <small><%= email.date %></small>
+
+                      </div>
+                    </a>
+                </div>
+                <% } %>
+              </li>
+              <li>
+                <input type='radio' name='tabs' id='tab2' checked />
+                <label for='tab2'>Social</label>
+                <div id='tab-content2' class='tab-content'>
+
+                </div>
+              </li>
+              <li>
+                <input type='radio' name='tabs' id='tab3' checked />
+                <label for='tab3'>Promotions</label>
+                  <div id='tab-content3' class='tab-content'>
+
+                    <% for(var i = 0; i < emails.length; i++){ %>
+                      <% var email = JSON.parse(emails[i].content) %>
+                      <a href=<%= '/email/:sender='+email.sender+'/:index=0' %>>
+                      <div class='email'>
+                        <div class='meddiv'>
+
                         </div>
-                      </nav>
-                    </div>
-                    <b><%= email.subject %></b>
-                    <hr>
-                    <small><%= email.sender %></small>
-                    <small><%= email.date %></small>
+                        <div class='tile-detail'>
+                          <div class='radial-container'>
+                            <nav class='radial'>
+                              <div class='avatar'>
+                                <a class='entypo-menu' href='#' title='menu'></a>
+                              </div>
+                              <div class='menu'>
+                                <a class='entypo-export' href='#' title='move'>
+                                  <span class='hide'>Move</span>
+                                </a>
+                                <a class='entypo-trash' href='#' title='delete'>
+                                  <span class='hide'>Delete</span>
+                                </a>
+                                <a class='entypo-forward' href='#' title='forward'>
+                                  <span class='hide'>Forward</span>
+                                </a>
+                                <a class='entypo-comment' href='#' title='reply'>
+                                  <span class='hide'>Reply</span>
+                                </a>
+                              </div>
+                            </nav>
+                          </div>
+                          <b><%= email.subject %></b>
+                          <hr>
+                          <small><%= email.sender %></small>
+                          <small><%= email.date %></small>
 
+                        </div>
+                      </a>
                   </div>
-                </a>
-            </div>
-            <% } %>
-            </p>
-          </li>
-          <li>
-            <input type='radio' name='tabs' id='tab2' checked />
-            <label for='tab2'>Social</label>
-            <div id='tab-content2' class='tab-content'>
-
-            </div>
-          </li>
-          <li>
-            <input type='radio' name='tabs' id='tab3' checked />
-            <label for='tab3'>Promotions</label>
-            <div id='tab-content3' class='tab-content'>
-
-            </div>
-          </li>
-          <li>
-            <input type='radio' name='tabs' id='tab4' checked />
-            <label for='tab4'>Updates</label>
-            <div id='tab-content4' class='tab-content'>
-
-            </div>
-
-          </li>
-        </ul>
-      </div>
+                  <% } %>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
     </div>
     <script src='main.js' type='text/javascript'></script>
   </body>
