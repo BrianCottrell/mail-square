@@ -193,17 +193,12 @@ a {
   box-sizing: border-box;
 }
 
-body {
-  padding: 20px;
-  text-align: left;
-}
-
 .tabs {
-  width: 650px;
+  width: 100%;
   float: none;
   list-style: none;
   position: relative;
-  margin: 80px 0 0 10px;
+  margin: 20px 0 0 10px;
   text-align: left;
 }
 .tabs li {
@@ -246,6 +241,7 @@ body {
   position: absolute;
   top: 53px;
   left: 0;
+  white-space: normal;
 }
 .tabs [id^="tab"]:checked + label {
   color: black;
@@ -255,3 +251,9 @@ body {
   display: block;
 }
 //tabs end
+//email tiles
+.email {
+  height: 300px;
+  width: 200px;
+  margin: 10px;
+}
