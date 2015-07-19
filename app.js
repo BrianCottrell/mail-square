@@ -39,22 +39,35 @@ var cpsConn = new cps.Connection(
 //cpsConn.debug = true;
 
 //Insert
-var storeEmail = function(data){
+var storeEmail = function(data, sentBy){
     var id = Date.now(),
-        content = data;
-    var insert_request = new cps.InsertRequest('<document><id>'+id+'</id>'+cps.Term(content, "content")+'</document>');
+        content = data,
+        sender = sentBy;
+    var insert_request = new cps.InsertRequest('<document><id>'+id+'</id>'+cps.Term(content, "content")+cps.Term(sender, "sender")+'</document>');
     cpsConn.sendRequest(insert_request, function(err, insert_response) {
         if (err) return console.error(err);
        console.log('New email added: ' + insert_response.document[0].id);
     });
 }
 
-app.get('/',function(req,res){
+app.get('/', function(req, res){
     var search_req = new cps.SearchRequest("*", 0, 100);
     cpsConn.sendRequest(search_req, function (err, search_resp) {
         if (err) return console.log(err);
         console.log(search_resp.results.document);
         res.render('index.ejs', {'emails': search_resp.results.document});
+    });
+});
+
+app.get('/email/:sender/:index', function(req, res){
+    var emailIndex = parseInt(req.params.index.slice(7));
+    console.log(emailIndex);
+    var search_req = new cps.SearchRequest(cps.Term(req.params.sender.slice(8), "sender"), emailIndex, 1);
+    cpsConn.sendRequest(search_req, function (err, search_resp) {
+        if (err) return console.log(err);
+        console.log(search_resp.results.document);
+
+        res.render('email.ejs', {'email': search_resp.results.document[0], 'index': emailIndex});
     });
 });
 
@@ -72,7 +85,9 @@ app.post('/email_processor', jsonParser, function(req, res) {
         'from'      : req.body.From,
         'subject'   : req.body.Subject,
         'content'   : req.body['Text-part']
-    }));
+    }),
+        req.body.Sender
+    );
     console.log(req.body['Text-part']);
 });
 
@@ -84,8 +99,8 @@ var SparkPost = require("sparkpost");
 var client = new SparkPost(key);
 
 app.post('/sparkpost_send', function(req, res) {
-    console.log(req.body.recipient);
-    console.log(req.body.subject);
+  console.log(req.body.recipient);
+  console.log(req.body.subject);
 	var reqOpts = {
 		transmissionBody: {
 			options: {
