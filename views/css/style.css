@@ -237,7 +237,7 @@ a {
   width: 200px;
   background: #dcdcdc;
   transform: translate(4px, 4px);
-  box-shadow: 1px 0px #cfcfcf, 0px 1px #f6f6f6, 2px 1px #cfcfcf, 1px 2px #f6f6f6;
+  box-shadow: 1px 2px 17px 0 rgba(0, 0, 0, 0.2), 1px 2px 5px 0 rgba(0, 0, 0, 0.2);
   font-size: 12px;
   padding: 10px 20px;
   background-color: #f75c72; }
